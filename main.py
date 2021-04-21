@@ -12,7 +12,7 @@ def pcldir2pcddir(src_dir,dst_dir):
             pcd_data = o3d.io.read_point_cloud(os.path.join(src_dir,plyfile))
             pcdfile=os.path.join(dst_dir,plyfile.replace(".ply",".pcd"))
             o3d.io.write_point_cloud(pcdfile,pcd_data)
-          
+
         
 if __name__ == "__main__":
     
@@ -24,8 +24,9 @@ if __name__ == "__main__":
     if args.src:
         if args.dst:
                 print('All the pcl files in %s will be saved in %s as pcd'%(args.src,args.dst))
-                pcldir2pcddir(args.src,args.dst)
                 os.makedirs(args.dst,exist_ok=True)
+                pcldir2pcddir(args.src,args.dst)
+                
                 
         else:
             print('All the pcl files in %s will be saved in the same directory as pcd'%(args.src))
