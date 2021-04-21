@@ -6,7 +6,7 @@ Version of open3d : 0.11.2
 $ python main.py --pcl [existing path to the pcl directory] --pcd [(optional)save path to the pcd directory]
 ```
 
-
+In the case where pcd directory is given:
 ```
 |----- [path to the pcl directory]
 |         |----- 0000.ply
@@ -20,7 +20,7 @@ $ python main.py --pcl [existing path to the pcl directory] --pcd [(optional)sav
 |         ...
 ```
 
-
+In the case where pcd directory is not given:
 ```
 |----- [path to the pcl directory]
 |         |----- 0000.ply
