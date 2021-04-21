@@ -6,7 +6,7 @@ import open3d as o3d
 
     
     
-def pcldir2pcddir(src_dir,dst_dir):
+def plydir2pcddir(src_dir,dst_dir):
     for plyfile in os.listdir(src_dir):
         if  os.path.splitext(plyfile)[1]==".ply":
             pcd_data = o3d.io.read_point_cloud(os.path.join(src_dir,plyfile))
@@ -17,20 +17,20 @@ def pcldir2pcddir(src_dir,dst_dir):
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('--pcl', type = str, help = 'existing path to the pcl directory/file')
+    parser.add_argument('--ply', type = str, help = 'existing path to the ply directory/file')
     parser.add_argument('--pcd', type = str, help = 'path to the pcd directory (optional)')
     args = parser.parse_args()
     
-    if args.pcl:
+    if args.ply:
         if args.pcd:
-                print('All the pcl files in %s will be saved in %s as pcd'%(args.pcl,args.pcd))
+                print('All the ply files in %s will be saved in %s as pcd'%(args.ply,args.pcd))
                 os.makedirs(args.pcd,exist_ok=True)
-                pcldir2pcddir(args.pcl,args.pcd)
+                plydir2pcddir(args.ply,args.pcd)
                 
                 
         else:
-            print('All the pcl files in %s will be saved in the same directory as pcd'%(args.pcl))
-            pcldir2pcddir(args.pcl,args.pcl)
+            print('All the ply files in %s will be saved in the same directory as pcd'%(args.ply))
+            plydir2pcddir(args.ply,args.ply)
             
         
     else:
