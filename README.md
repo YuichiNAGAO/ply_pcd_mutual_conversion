@@ -3,12 +3,12 @@
 Version of open3d : 0.11.2
 
 ```
-$ python main.py --pcl [existing path to the pcl directory] --pcd [(optional)save path to the pcd directory]
+$ python main.py --ply [existing path to the ply directory] --pcd [(optional)save path to the pcd directory]
 ```
 
 In the case where pcd directory is given:
 ```
-|----- [path to the pcl directory]
+|----- [path to the ply directory]
 |         |----- 0000.ply
 |         |----- 0001.ply
 |         |----- 0002.ply
